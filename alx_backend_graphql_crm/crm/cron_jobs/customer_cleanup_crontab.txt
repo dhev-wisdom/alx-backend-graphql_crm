@@ -1,1 +1,1 @@
-0 2 * * * C:\Users\nonso\Desktop\ALX_PRODEV_BACKEND\Alx-GraphQL\alx_backend_graphql_crm\crm\cron_jobs\clean_inactive_customers.sh
+0 2 * * * /Users/nonso/Desktop/ALX_PRODEV_BACKEND/Alx-GraphQL/alx_backend_graphql_crm/crm/cron_jobs/clean_inactive_customers.sh

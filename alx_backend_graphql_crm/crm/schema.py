@@ -68,7 +68,7 @@ class BulkCreateCustomers(graphene.Mutation):
                 except Exception as e:
                     errors.append(str(e))
 
-        return BulkCreateCustomers(customer=created_customers, errors=errors)
+        return BulkCreateCustomers(customers=created_customers, errors=errors)
     
 
 class CreateProduct(graphene.Mutation):

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 PROJECT_DIR="C:\\Users\\nonso\\Desktop\\ALX_PRODEV_BACKEND\\Alx-GraphQL\\alx_backend_graphql_crm"
 MANAGE_PY="$PROJECT_DIR/manage.py"
