@@ -1,0 +1,1 @@
+0 8 * * * /usr/bin/python3  C:\Users\nonso\Desktop\ALX_PRODEV_BACKEND\Alx-GraphQL\alx_backend_graphql_crm\cron_jobs\send_order_reminders.py
