@@ -20,4 +20,37 @@ def log_crm_heartbeat():
                 f.write(f"{now} GraphQL responded: {response.json()}\n")
     except Exception as e:
         with open(log_file, 'a') as f:
-            f.write(f"{now} GrapQL check failed: {e}\n")
+            f.write(f"{now} GraphQL check failed: {e}\n")
+
+def update_low_stock():
+    """Runs the GraphQL mutation to restock low-stock products and logs results."""
+    now = datetime.datetime.now().strftime("%d/%m/%Y-%H:%M:%S")
+    log_file = "/tmp/low_stock_updates_log.txt"
+
+    mutation = """
+    mutation {
+        updateLowStockProducts {
+            success
+            message
+            updatedProducts {
+                id
+                name
+                stock
+            }
+        }
+    }
+    """
+
+    try:
+        response = requests.post(
+            "http://localhost:8000/graphql",
+            json={"query": {mutation}},
+            timeout=10
+        )
+        result = response.json()
+
+        with open(log_file, 'a') as f:
+            f.write(f"{now} - Stock update result: {result}\n")
+    except Exception as e:
+        with open(log_file, 'a') as f:
+            f.write(f"{now} - ERROR: {str(e)}\n")
